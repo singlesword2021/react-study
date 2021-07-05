@@ -7,10 +7,7 @@ class Square extends React.Component {
   render() {
 
     return (
-      <button 
-        className="square" 
-        onClick={() => { this.props.onClick()}}
-      >
+      <button className="square" onClick={() => { this.props.onClick()}} >
         {this.props.value}
       </button>
     );
@@ -88,3 +85,21 @@ ReactDOM.render(
   <Game />,
   document.getElementById('root')
 );
+
+//#region test of yield
+console.log("ddd");
+
+function * genFunc(){
+  var arr = [3,5,6];
+  for(var i = 0;i < arr.length;i++){
+    yield arr[i];
+  }
+}
+
+var g = genFunc();
+// console.log(g);
+console.log(g.next());
+console.log(g.next());
+console.log(g.next());
+console.log(g.next());
+//#endregion
